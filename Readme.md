@@ -1,7 +1,7 @@
 # Личный проект «Седона»
 
-* Студент: [Kantik Kantik](https://up.htmlacademy.ru/htmlcss/35/user/2210791).
-* Наставник: `Неизвестно`.
+* Студент: [Kantik Yanov](https://up.htmlacademy.ru/htmlcss/35/user/2210791).
+* Наставник: `Валя Видяева`.
 
 ---
 
