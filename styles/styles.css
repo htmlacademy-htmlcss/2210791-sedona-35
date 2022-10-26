@@ -530,16 +530,16 @@ main {
 }
 
 .hotels-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 340px 340px 340px;
+  gap: 20px;
+  margin-left: 70px;
 }
 
 .hotels-item {
   width: 340px;
   border: 1px solid #E6E6E6;
   border-radius: 4px;
-  margin: 0 10px;
 }
 
 .hotels-info-container {
@@ -551,10 +551,6 @@ main {
 .hotel-price {
   display: block;
   margin: auto;
-}
-
-.green-tree {
-  margin-right: 734px;
 }
 
 .hotel-card-link {
