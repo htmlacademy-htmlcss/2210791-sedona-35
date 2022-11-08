@@ -12,12 +12,12 @@
       <nav class="navigation">
         <ul class="navigation-list reset-list">
           <li class="navigation-item navigation-item-current">
-            <a class="navigation-link" href="#">Главная</a>
+            <a class="navigation-link navigation-link-current" href="index.html">Главная</a>
           </li>
           <li class="navigation-item">
             <a class="navigation-link" href="#">О Седоне</a>
           </li>
-          <li class="navigation-item">
+          <li class="navigation-item navigation-hotels">
             <a class="navigation-link" href="catalog.html">Гостиницы</a>
           </li>
         </ul>
@@ -30,6 +30,7 @@
           <li class="navigation-user-item">
             <a class="navigation-user-link heart" href="#">
               <span class="visually-hidden">Понравилось</span>
+              <span class="counter page-header__counter">12</span>
             </a>
           </li>
           <li class="navigation-user-item navigation-button-item">
@@ -62,37 +63,43 @@
                   <ul class="filter-list reset-list">
                     <li class="filter-item">
                       <label class="control">
-                        <input class="control-input" type="checkbox" name="pool" checked> Бассейн
+                        <input class="visually-hidden control-input" type="checkbox" name="pool" checked> Бассейн
+                        <span class="control-mark"></span>
                       </label>
                     </li>
                     <li class="filter-item">
                       <label class="control">
-                        <input class="control-input" type="checkbox" name="parking" checked> Парковка
+                        <input class="visually-hidden control-input" type="checkbox" name="parking" checked> Парковка
+                        <span class="control-mark"></span>
                       </label>
                     </li>
                     <li class="filter-item">
                       <label class="control">
-                        <input class="control-input" type="checkbox" name="wi-fi"> Wi-Fi
+                        <input class="visually-hidden control-input" type="checkbox" name="wi-fi"> Wi-Fi
+                        <span class="control-mark"></span>
                       </label>
                     </li>
                   </ul>
                 </fieldset>
                 <fieldset class="catalog-filter-group catalog-filter-group-two">
-                  <legend class="catalog-filter-title">Тип жилья:</legend>
+                  <legend class="catalog-filter-title">Тип Жилья:</legend>
                   <ul class="filter-list reset-list">
                     <li class="filter-item">
                       <label class="control">
-                        <input class="control-input" type="radio" name="hotel-type" value="hotel" checked>Гостиница
+                        <input class="visually-hidden control-input" type="radio" name="hotel-type" value="hotel" checked>Гостиница
+                        <span class="control-mark control-mark-radio"></span>
                       </label>
                     </li>
                     <li class="filter-item">
                       <label class="control">
-                        <input class="control-input" type="radio" name="hotel-type" value="motel">Мотель
+                        <input class="visually-hidden control-input" type="radio" name="hotel-type" value="motel">Мотель
+                        <span class="control-mark control-mark-radio"></span>
                       </label>
                     </li>
                     <li class="filter-item">
                       <label class="control">
-                        <input class="control-input" type="radio" name="hotel-type" value="apartments">Апартаменты
+                        <input class="visually-hidden control-input" type="radio" name="hotel-type" value="apartments">Апартаменты
+                        <span class="control-mark control-mark-radio"></span>
                       </label>
                     </li>
                   </ul>
@@ -100,10 +107,21 @@
                 <fieldset class="price">
                   <legend class="price-value catalog-filter-title">Стоимость, ₽:</legend>
                   <div class="price-container">
-                    <input class="price-amount price-amount-left" type="text" placeholder="от" value="0">
-                    <input class="price-amount price-amount-right" type="text" placeholder="до" value="9000">
+                    <label class="price-amount-label price-amount-label-left" for="price-amount-left" >от</label>
+                    <input class="price-amount price-amount-left" id="price-amount-left" type="number" value="0">
+                    <label class="price-amount-label price-amount-label-right" for="price-amount-right">до</label>
+                    <input class="price-amount price-amount-right" id="price-amount-right" type="number" placeholder="до" value="9000">
                   </div>
-                  <input class="price-value-controller" type="range">
+                  <div class="range-scale">
+                    <div class="range-bar">
+                      <button class="range-button range-button-min" type="button">
+                        <span class="visually-hidden">Изменить минимальную цену</span>
+                      </button>
+                      <button class="range-button range-button-max" type="button">
+                        <span class="visually-hidden">Изменить максимальную цену</span>
+                      </button>
+                    </div>
+                  </div>
                 </fieldset>
                 <div class="price-buttons">
                   <button class="button button-apply button-blue" type="submit">Применить</button>
@@ -114,23 +132,29 @@
           </section>
         </header>
         <section class="filter-results">
-          <h2 class="finded-hotels">Найдено гостиниц: 38</h2>
+          <h2 class="finded-hotels">Найдено гостиниц: <span class="finded-hotels-counter">38</span></h2>
           <select class="options">
             <option value="cheap">Сначала дешёвые</option>
             <option value="expensive">Сначала дорогие</option>
             <option value="popular">Сначала популярные</option>
           </select>
-          <div class="button-types">
-            <button class="filter-button button-grid" type="button">
-              <span class="visually-hidden">Показать в сетку</span>
-            </button>
-            <button class="filter-button button-alone" type="button">
-              <span class="visually-hidden">Показать по одному</span>
-            </button>
-            <button class="filter-button button-horizontally" type="button">
-              <span class="visually-hidden">Показать по горизонтали</span>
-            </button>
-          </div>
+          <ul class="button-types reset-list">
+            <li class="button-types-item">
+              <button class="filter-button button-grid" type="button">
+                <span class="visually-hidden">Показать в сетку</span>
+              </button>
+            </li>
+            <li class="button-types-item">
+              <button class="filter-button button-alone" type="button">
+                <span class="visually-hidden">Показать по одному</span>
+              </button>
+            </li>
+            <li class="button-types-item">
+              <button class="filter-button button-horizontally" type="button">
+                <span class="visually-hidden">Показать по горизонтали</span>
+              </button>
+            </li>
+          </ul>
         </section>
         <section class="all-hotels">
           <h2 class="visually-hidden">Список гостиниц</h2>
@@ -143,7 +167,7 @@
                 </a>
                 <div class="about-hotels">
                 <p class="hotel-type">Гостиница</p>
-                  <b class="hotel-price">от 4000 ₽</b>
+                  <b class="hotel-price">От 4000 ₽</b>
                   <a class="details button-brown" href="#">Подробнее</a>
                   <button class="button-hotels favorite button-blue" name="add-to-favorites" type="button">В избранное</button>
                   <div class="stars stars-4">
@@ -161,7 +185,7 @@
                 </a>
                 <div class="about-hotels">
                   <p class="hotel-type">Гостиница</p>
-                  <b class="hotel-price">от 5000 ₽</b>
+                  <b class="hotel-price">От 5000 ₽</b>
                   <a class="details button-brown" href="#">Подробнее</a>
                   <button class="button-hotels favorited" name="add-to-favorites" type="button">В избранном</button>
                   <div class="stars stars-4">
@@ -179,7 +203,7 @@
                 </a>
                 <div class="about-hotels">
                   <p class="hotel-type">Гостиница</p>
-                  <b class="hotel-price">от 2500 ₽</b>
+                  <b class="hotel-price">От 2500 ₽</b>
                   <a class="details button-brown" href="#">Подробнее</a>
                   <button class="button-hotels favorite button-blue" name="add-to-favorites" type="button">В избранное</button>
                   <div class="stars stars-3">
@@ -197,7 +221,7 @@
                 </a>
                 <div class="about-hotels">
                   <p class="hotel-type">Гостиница</p>
-                  <b class="hotel-price">от 1500 ₽</b>
+                  <b class="hotel-price">От 1500 ₽</b>
                   <a class="details button-brown" href="#">Подробнее</a>
                   <button class="button-hotels favorite button-blue" name="add-to-favorites" type="button">В избранное</button>
                   <div class="stars stars-2">
@@ -213,16 +237,16 @@
               <a class="pagination-link pagination-current button-blue">1</a>
             </li>
             <li class="pagination-item">
-              <a class="pagination-link button-blue" href="#2">2</a>
+              <a class="pagination-link button-blue" href="#">2</a>
             </li>
             <li class="pagination-item">
-              <a class="pagination-link button-blue" href="#3">3</a>
+              <a class="pagination-link button-blue" href="#">3</a>
             </li>
             <li class="pagination-item">
-              <a class="pagination-link button-blue" href="#4">4</a>
+              <a class="pagination-link button-blue" href="#">4</a>
             </li>
             <li class="pagination-item">
-              <a class="pagination-link pagination-next" href="#5">
+              <a class="pagination-link pagination-next" href="#">
                 <span class="ellipsis">...</span>
               </a>
             </li>
