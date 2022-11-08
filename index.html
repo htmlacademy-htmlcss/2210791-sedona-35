@@ -13,13 +13,13 @@
       <nav class="navigation">
         <ul class="navigation-list reset-list">
           <li class="navigation-item navigation-item-current">
-            <a class="navigation-link" href="#">Главная</a>
+            <a class="navigation-link navigation-link-current" href="index.html">Главная</a>
           </li>
           <li class="navigation-item">
             <a class="navigation-link" href="#">О Седоне</a>
           </li>
           <li class="navigation-item navigation-hotels">
-            <a class="navigation-link" href="catalog.html" target="_blank">Гостиницы</a>
+            <a class="navigation-link" href="catalog.html">Гостиницы</a>
           </li>
         </ul>
         <ul class="navigation-list navigation-user reset-list">
@@ -31,6 +31,7 @@
           <li class="navigation-user-item">
             <a class="navigation-user-link heart" href="#">
               <span class="visually-hidden">Понравилось</span>
+              <span class="counter page-header__counter">12</span>
             </a>
           </li>
           <li class="navigation-user-item navigation-button-item">
@@ -101,7 +102,7 @@
               <div class="icon icon-souvenir">
                 <span class="visually-hidden">Сувениры</span>
               </div>
-              <h3 class="additional-advantages-title">Сувениры</h3>
+              <h3 class="additional-advantages-title additional-advantages-title-souvenir">Сувениры</h3>
               <p class="additional-advantages-description">Не только китайского,<br>но и настоящего местного<br>производства!</p>
             </li>
           </ul>
@@ -119,7 +120,7 @@
             <form class="subscription-data" action="https://echo.htmlacademy.ru/" method="post">
               <span class="visually-hidden">Email</span>
               <input class="email-field" type="email" name="email" id="email-for-subscription" placeholder="Ваш e-mail">
-              <button class="button subscription-button button-blue" type="submit">ПОДПИСАТЬСЯ</button>
+              <button class="button subscription-button button-blue" type="submit">Подписаться</button>
             </form>
         </section>
       </div>
@@ -160,7 +161,33 @@
           </a>
     </footer>
 
-
+    <div class="modal-container modal-container-close">
+      <div class="modal modal-auth">
+        <button class="modal-close-button" type="button">
+          <span class="visually-hidden">Закрыть</span>
+        </button>
+        <section class="modal-content">
+          <h2 class="modal-title">Поиск гостиницы в Седоне</h2>
+          <form class="modal-form" action="#" method="get">
+            <div class="modal-data-container">
+              <label class="modal-text" for="arrival">Дата Заезда:</label>
+              <input class="modal-input arrival-input" type="text" id="arrival" name="arrival" value="27 апреля 2020">
+            </div>
+            <div class="modal-data-container">
+              <label class="modal-text" for="departure">Дата Выезда:</label>
+              <input class="modal-input departure-input" type="text" id="departure" name="departure" value="1 сентября 2023">
+            </div>
+            <div class="family-info-container">
+            <label class="modal-text" for="adults"> Взрослые:</label>
+              <input class="modal-input family-amount-input adult-input" id="adults" type="number" name="family-amount" value="2">
+            <label class="modal-text modal-text-children" for="children"> Дети:</label>
+              <input class="modal-input family-amount-input children-input" id="children" type="number" name="family-amount" value="2">
+          </div>
+          <button class="button button-blue modal-button">Найти</button>
+          </form>
+        </section>
+      </div>
+    </div>
 
   </body>
 </html>
