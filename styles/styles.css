@@ -573,13 +573,14 @@ main {
 .modal-form  {
  display: grid;
  grid-template-columns: 1fr;
- gap: 48px;
 }
 
 .modal-data-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 23px;
 }
 
 .modal-text {
@@ -602,14 +603,27 @@ main {
   padding: 12px 20px;
 }
 
+.modal-warning {
+  color: #FF5757;
+  margin-left: 157px;
+  margin-top: 4px;
+  line-height: 21px;
+  font-size: 16px;
+}
+
+.warning-info {
+  color: #333333;
+}
+
 .family-info-container {
   display: flex;
   align-items: center;
+  margin-bottom: 48px;
 }
 
 .family-amount-input {
   width: 110px;
-  margin-left: 78px;
+  margin-left: 85px;
 }
 
 .family-amount-input:-webkit-outer-spin-button {
@@ -642,9 +656,9 @@ main {
   left: 59px;
 }
 
-.modal-container-close {
+/* .modal-container-close {
   display: none;
-}
+} */
 
 .modal-button {
   box-sizing: border-box;
