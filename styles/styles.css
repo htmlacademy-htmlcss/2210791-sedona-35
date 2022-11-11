@@ -88,14 +88,9 @@ main {
   margin-right: 32px;
  }
 
-.navigation-link:hover {
-  border-bottom: 2px solid transparent;
-  border-color: #756257;
- }
-
- .navigation-link-current {
-  border-bottom: 2px solid transparent;
-  border-color: #756257;
+.navigation-link:hover,
+.navigation-link-current {
+  border-bottom: 2px solid #756257;
  }
 
  .navigation-link {
@@ -103,7 +98,7 @@ main {
   display: block;
   color: #000000;
   text-decoration: none;
-  padding: 20px 0;
+  padding: 20px 0 23px;
   font-weight: 700;
   background-repeat: no-repeat;
  }
@@ -135,7 +130,7 @@ main {
   position: absolute;
   background-color: #7DB54F;
   text-decoration: none;
-  font-family: 'PT Sans';
+  font-family: inherit;
   font-size: 10px;
   color: #ffffff;
   border-radius: 50%;
@@ -178,6 +173,7 @@ main {
 
  .button-brown:focus {
   background-color: #615048;
+  outline: none;
  }
 
  .button-brown:active {
@@ -192,10 +188,12 @@ main {
 
  .button-blue:hover {
   background-color: #68A2CA;
+  outline: none;
  }
 
  .button-blue:focus {
   background-color: #68A2CA;
+  outline: none;
  }
 
  .button-blue:active {
@@ -433,7 +431,7 @@ main {
  }
 
  .subscription-button {
-  font-family: 'PT Sans';
+  font-family: inherit;
   text-transform: uppercase;
   color: #FFFFFF;
   background-color: #82B3D3;
@@ -528,6 +526,7 @@ main {
 }
 
 .modal-container {
+  box-shadow: 0 25px 50px 0 #000000;
   position: fixed;
   width: 100%;
   height: 100%;
@@ -535,6 +534,7 @@ main {
   left: 0;
   display: flex;
   background-color: rgba(242, 242, 242, 0.8);
+  overflow: auto;
 }
 
 .modal {
@@ -560,6 +560,15 @@ main {
   background-repeat: no-repeat;
   background-position: center;
   cursor: pointer;
+}
+
+.modal-close-button:active{
+  background-color: #E6E6E6;
+  opacity: 30%;
+}
+
+.modal-close-button:focus {
+  border: 3px solid #83B3D3;
 }
 
 .modal-title {
@@ -590,6 +599,7 @@ main {
 }
 
 .modal-input {
+  font: inherit;
   border-radius: 4px;
   border: 0;
   width: 440px;
@@ -601,6 +611,29 @@ main {
   font-weight: 700;
   box-sizing: border-box;
   padding: 12px 20px;
+}
+
+.modal-input:focus {
+  border: 3px solid #83B3D3;
+  outline: none;
+}
+
+.modal-input:active {
+  border: 2px solid #000000;
+  outline: none;
+}
+
+.main-modal-input {
+  background-image: url(../images/icons/calendar.svg);
+  background-repeat: no-repeat;
+  background-position: 402px;
+}
+
+.main-modal-input::before {
+  position: absolute;
+  content: '';
+  width: 20px;
+  height: 20px;
 }
 
 .modal-warning {
@@ -615,45 +648,153 @@ main {
   color: #333333;
 }
 
+.adult-block {
+  display: flex;
+  align-items: center;
+}
+
+.child-block {
+  display: flex;
+  align-items: center;
+  margin-left: 88px;
+}
+
 .family-info-container {
   display: flex;
   align-items: center;
   margin-bottom: 48px;
 }
 
-.family-amount-input {
-  width: 110px;
-  margin-left: 85px;
+ .family-amount-input {
+  width: 31px;
+  padding: 14px 10px;
+  border-radius: 0;
 }
 
-.family-amount-input:-webkit-outer-spin-button {
+.family-amount-input::-webkit-outer-spin-button {
   appearance: none;
 }
 
-.family-amount-input:-webkit-inner-spin-button {
+.family-amount-input::-webkit-inner-spin-button {
   appearance: none;
 }
 
-.adult-input {
+.modal-button-amount {
+  width: 40px;
+  height: 48px;
+  border: 0;
+  cursor: pointer;
+}
+
+.modal-button-amount svg {
+  fill: currentColor;
+  opacity: 30%;
+}
+
+.modal-button-amount:focus {
+  outline: none;
+}
+
+.minus svg {
+  padding: 9px 3px;
+}
+
+.minus {
+  border-radius: 4px 0 0 4px;;
+}
+
+.plus {
+  border-radius: 0 4px 4px 0;
+
+}
+
+.plus svg {
+  padding: 4px;
+}
+
+.minus:hover svg {
+  color: #000000;
+}
+
+.plus:hover svg {
+  color: #000000;
+}
+
+.minus:focus svg {
+  color: #000000;
+  border: 3px solid #82B3D3;
+  border-radius: 4px;
+}
+
+.plus:focus svg {
+  color: #000000;
+  border: 3px solid #82B3D3;
+  border-radius: 4px;
+}
+
+.minus-adults {
   margin-left: 46px;
 }
 
-.modal-text-children {
-  margin-left: 85px;
-  position: relative;
+.minus-children {
+  right: 141px;
 }
 
-.modal-text-children::after {
-  content: '';
-  position: absolute;
+.child-input {
   width: 26px;
   height: 26px;
-  background-color: #83B3D3;
   border-radius: 50%;
-  background-image: url(../images/icons/exclamation-point.svg);
+  background-color: #83B3D3;
+  cursor: pointer;
+  border: 0;
+}
+
+.child-input:hover {
+  opacity: 30%;
+}
+
+.child-input:focus {
+  outline: none;
+  opacity: 30%;
+}
+
+.tooltip {
+  position: relative;
+  margin-left: 5px;
+  margin-right: 45px;
+}
+
+.tooltip-text {
+  display: none;
+  position: absolute;
+  width: 256px;
+  padding: 20px 15px 23px 25px;
+  top: 41px;
+  right: 50%;
+  transform: translateX(50%);
+  font-size: 16px;
+  line-height: 20px;
+  border-radius: 10px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+  box-sizing: border-box;
+  background-color: #242424;
+  color: #FFFFFF;
+}
+
+.tooltip-text:after {
+  content:'';
+  background-image: url("../images/icons/triangular.svg");
   background-repeat: no-repeat;
-  background-position: center;
-  left: 59px;
+  position:absolute;
+  width: 19px;
+  height: 9px;
+  bottom: 100%;
+  left: calc(50% - 10px);
+}
+
+.child-input:hover + .tooltip-text,
+.child-input:focus + .tooltip-text {
+  display: block;
 }
 
 /* .modal-container-close {
@@ -667,6 +808,8 @@ main {
   color: #fff;
   background-color: #83B3D3;
   border-radius: 10px;
+  font: inherit;
+  font-weight: 700;
 }
 
 /* Каталог */
@@ -782,11 +925,11 @@ main {
 }
 
 .control-mark:focus {
-  border: 3px solid #83B3D3;
+  outline: 3px solid #83B3D3;
 }
 
 .control-mark:active {
-  border: 2px solid #83B3D3;
+  outline: 2px solid #83B3D3;
 }
 
 .control-input {
@@ -841,7 +984,11 @@ main {
 }
 
 .price-amount:focus {
-  border: 3px solid #83B3D3;
+  outline: 3px solid #83B3D3;
+}
+
+.price-amount:active {
+  outline: 2px solid #000000;
 }
 
 .price-container {
@@ -867,7 +1014,7 @@ main {
   top: 12px;
 }
 
-.price-amount::-webkit-outer-spin-button
+.price-amount::-webkit-outer-spin-button,
 .price-amount::-webkit-inner-spin-button {
   appearance: none;
   margin: 0;
@@ -913,6 +1060,14 @@ main {
   cursor: pointer;
 }
 
+.range-button:focus {
+  outline: 3px solid #83B3D3;
+}
+
+.range-button:active {
+  outline: 2px solid #83B3D3;
+}
+
 .range-button-min {
   position: absolute;
   top: -8px;
@@ -945,6 +1100,7 @@ main {
 
 .button-reset:focus {
   border: 3px solid #82B3D3;
+  outline: none;
 }
 
 .button-reset:active {
@@ -970,7 +1126,7 @@ main {
 }
 
 .options  {
-  font-family: 'PT Sans';
+  font-family: inherit;
   font-size: 18px;
   border: 2px solid #E5E5E5;
   width: 292px;
@@ -1026,6 +1182,7 @@ main {
 
 .filter-button:focus {
   border: 2px solid #68A2CA;
+  outline: none;
 }
 
 .filter-button:active {
@@ -1115,8 +1272,20 @@ main {
 }
 
 .favorited {
+  font: inherit;
   background-color: #7DB54F;
   cursor: pointer;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.favorited:focus {
+  background-color: #6C9E42;
+  outline: none;
+}
+
+.favorited:active {
+  color: rgba(255, 255, 255, 0.3)
 }
 
 .stars {

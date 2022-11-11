@@ -6,19 +6,19 @@
     <link rel="stylesheet" href="styles/styles.css">
   <body>
     <header class="page-header">
-      <a class="logo" href="">
+      <a class="logo" href="index.html">
         <img class="site-logo" src="images/logos/sedona-logo.svg" width="140" height="70" alt="Логотип сайта Sedona">
       </a>
       <nav class="navigation">
         <ul class="navigation-list reset-list">
-          <li class="navigation-item navigation-item-current">
-            <a class="navigation-link navigation-link-current" href="index.html">Главная</a>
+          <li class="navigation-item">
+            <a class="navigation-link" href="index.html">Главная</a>
           </li>
           <li class="navigation-item">
             <a class="navigation-link" href="#">О Седоне</a>
           </li>
-          <li class="navigation-item navigation-hotels">
-            <a class="navigation-link" href="catalog.html">Гостиницы</a>
+          <li class="navigation-item navigation-hotels navigation-item-current">
+            <a class="navigation-link navigation-link-current" href="catalog.html">Гостиницы</a>
           </li>
         </ul>
         <ul class="navigation-list navigation-user reset-list">
@@ -57,7 +57,7 @@
           <section class="filter">
             <div class="hotel-options-container">
               <h2 class="visually-hidden">Фильтры для подбора</h2>
-              <form class="hotels-filter" action="#" method="GET">
+              <form class="hotels-filter" action="https://echo.htmlacademy.ru" method="get">
                 <fieldset class="catalog-filter-group">
                   <legend class="catalog-filter-title">Инфраструктура:</legend>
                   <ul class="filter-list reset-list">
@@ -108,9 +108,9 @@
                   <legend class="price-value catalog-filter-title">Стоимость, ₽:</legend>
                   <div class="price-container">
                     <label class="price-amount-label price-amount-label-left" for="price-amount-left" >от</label>
-                    <input class="price-amount price-amount-left" id="price-amount-left" type="number" value="0">
+                    <input class="price-amount price-amount-left" id="price-amount-left" type="number" value="0" placeholder="0">
                     <label class="price-amount-label price-amount-label-right" for="price-amount-right">до</label>
-                    <input class="price-amount price-amount-right" id="price-amount-right" type="number" placeholder="до" value="9000">
+                    <input class="price-amount price-amount-right" id="price-amount-right" type="number" placeholder="9000" value="9000">
                   </div>
                   <div class="range-scale">
                     <div class="range-bar">
