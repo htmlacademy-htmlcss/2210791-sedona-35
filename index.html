@@ -171,22 +171,51 @@
           <form class="modal-form" action="#" method="get">
             <div class="modal-data-container">
               <label class="modal-text" for="arrival">Дата Заезда:</label>
-              <input class="modal-input arrival-input" type="text" id="arrival" name="arrival" value="27 апреля 2020">
+              <input class="modal-input main-modal-input arrival-input" type="text" id="arrival" name="arrival" value="27 апреля 2020" placeholder="Укажите дату">
+              <p class="modal-warning">Мы не можем отправить вас в прошлое</p>
             </div>
             <div class="modal-data-container">
               <label class="modal-text" for="departure">Дата Выезда:</label>
-              <input class="modal-input departure-input" type="text" id="departure" name="departure" value="1 сентября 2023">
+              <input class="modal-input main-modal-input departure-input" type="text" id="departure" name="departure" value="1 сентября 2023" placeholder="Укажите дату">
+              <p class="modal-warning warning-info">На эти даты есть свободные номера. Пока есть.</p>
             </div>
             <div class="family-info-container">
-            <label class="modal-text" for="adults"> Взрослые:</label>
-              <input class="modal-input family-amount-input adult-input" id="adults" type="number" name="family-amount" value="2">
-            <label class="modal-text modal-text-children" for="children"> Дети:</label>
-              <input class="modal-input family-amount-input children-input" id="children" type="number" name="family-amount" value="2">
-          </div>
-          <button class="button button-blue modal-button">Найти</button>
+              <div class="adult-block">
+                <label class="modal-text" for="adults"> Взрослые:</label>
+                <button class="modal-button-amount minus minus-adults" type="button">
+                  <span class="visually-hidden">Минус</span>
+                  <svg width="14" height="2" viewBox="0 0 14 2" xmlns="http://www.w3.org/2000/svg"><path d="M0 0v2h14V0H0Z"/></svg>
+                </button>
+                <input class="modal-input family-amount-input adult-input" id="adults" type="number" name="family-amount" value="2">
+                <button class="modal-button-amount plus plus-adults" type="button">
+                  <span class="visually-hidden">Плюс</span>
+                  <svg width="14" height="14"  viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg"><path d="M14 6H8V0H6v6H0v2h6v6h2V8h6V6Z"/></svg>
+                </button>
+              </div>
+              <div class="child-block">
+                <div class="child-inform">
+                  <label class="modal-text modal-text-children" for="children"> Дети:</label>
+                  <span class="tooltip">
+                    <button class="child-input" type="button" aria-labelledby="tooltip-label-date">
+                      <svg width="2" height="12" viewBox="0 0 2 12" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 0h2v2H0V0Zm2 12H0V3h2v9Z" fill="#fff"/></svg>
+                    </button>
+                    <span class="tooltip-text" role="tooltip" id="tooltip-label-date">Укажите количество детей, которые будут с вами, возраст которых от 6 до 18 лет. Дети до 6 лет размещаются бесплатно.</span>
+                    </span>
+                </div>
+                <button class="modal-button-amount minus minus-children" type="button">
+                  <span class="visually-hidden">Минус</span>
+                  <svg width="14" height="2" viewBox="0 0 14 2"  xmlns="http://www.w3.org/2000/svg"><path d="M0 0v2h14V0H0Z"/></svg>
+                </button>
+                <input class="modal-input family-amount-input children-input" id="children" type="number" name="family-amount" value="2">
+                <button class="modal-button-amount plus plus-children" type="button">
+                  <span class="visually-hidden">Плюс</span>
+                  <svg width="14" height="14" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg"><path d="M14 6H8V0H6v6H0v2h6v6h2V8h6V6Z" /></svg>
+                </button>
+              </div>
+            </div>
+            <button class="button button-blue modal-button">Найти</button>
           </form>
-        </section>
-      </div>
+      </section>
     </div>
 
   </body>
